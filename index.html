@@ -6,10 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Loading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #000;
+            color: white;
+            font-size: 55px;
+            font-weight: 700;
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="container">
+        <h1>Loading
+            <span id="dot">.</span>
+        </h1>
+    </div>
+    <script>
+        const dot = document.getElementById('dot');
+        const dynamicDot = () => {
+            dot.innerHTML.length > 2 ? dot.innerHTML = '' : dot.innerHTML += '.';
+        }
+        window.setInterval(dynamicDot, 500);
+    </script>
 </body>
 
 </html>
